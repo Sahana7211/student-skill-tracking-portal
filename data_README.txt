@@ -1,0 +1,1 @@
+The server creates data/db.json automatically on first run.

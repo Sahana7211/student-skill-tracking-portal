@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "id": "u_1793190175646_b1b352",
+      "name": "shalini",
+      "email": "shalini@gmail.com",
+      "passwordHash": "$2a$10$u8UxtCvwaQGwiThfioEgC.83cVCFPE10CsXtNhnv7r6VGjHbZqgsS",
+      "createdAt": "2026-10-28T12:22:55.771Z"
+    },
+    {
+      "id": "u_1793342680979_v47te8",
+      "name": "shalini",
+      "email": "shalini1@gmail.com",
+      "passwordHash": "$2a$10$/Ts8rHzYTsGV8y8C3GoFSufoebc2MivFpxBFcHLFfpsZqs2mfdq1W",
+      "createdAt": "2026-10-30T06:44:41.075Z"
+    },
+    {
+      "id": "u_1793342999585_sb0k6x",
+      "name": "shalini",
+      "email": "shalini2@gmail.com",
+      "passwordHash": "$2a$10$lixGLODKPzt5SG7S8pzowugIBuTJAsD.Ie6gQEczq.25YcpOY2c8S",
+      "createdAt": "2026-10-30T06:49:59.688Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t_1793190891978_bjuf",
+      "userId": "u_1793190175646_b1b352",
+      "title": "basics",
+      "subject": "dsa",
+      "dueDate": "2026-10-28",
+      "completed": true,
+      "createdAt": "2026-10-28T12:34:51.978Z",
+      "updatedAt": "2026-10-29T06:20:36.960Z"
+    }
+  ],
+  "results": [
+    {
+      "id": "r_1793344139827_i9hof",
+      "userId": "u_1793342999585_sb0k6x",
+      "subjectId": "cpp",
+      "subjectName": "C++",
+      "score": 96,
+      "correct": 24,
+      "total": 25,
+      "passed": true,
+      "completedAt": "2026-10-30T07:08:59.827Z",
+      "certificateCode": "SSP-2026-E38BCQ"
+    },
+    {
+      "id": "r_1793343538656_7y3wm",
+      "userId": "u_1793342999585_sb0k6x",
+      "subjectId": "cpp",
+      "subjectName": "C++",
+      "score": 100,
+      "correct": 25,
+      "total": 25,
+      "passed": true,
+      "completedAt": "2026-10-30T06:58:58.656Z",
+      "certificateCode": "SSP-2026-HHERYJ"
+    },
+    {
+      "id": "r_1793343260014_xf61h",
+      "userId": "u_1793342999585_sb0k6x",
+      "subjectId": "c",
+      "subjectName": "C Programming",
+      "score": 16,
+      "correct": 4,
+      "total": 25,
+      "passed": false,
+      "completedAt": "2026-10-30T06:54:20.014Z",
+      "certificateCode": null
+    },
+    {
+      "id": "r_1793190616580_0eouv",
+      "userId": "u_1793190175646_b1b352",
+      "subjectId": "dsa",
+      "subjectName": "Data Structures",
+      "score": 92,
+      "correct": 23,
+      "total": 25,
+      "passed": true,
+      "completedAt": "2026-10-28T12:30:16.581Z",
+      "certificateCode": "SSP-2026-H0FKYX"
+    },
+    {
+      "id": "r_1793190355441_pm8s6",
+      "userId": "u_1793190175646_b1b352",
+      "subjectId": "dsa",
+      "subjectName": "Data Structures",
+      "score": 32,
+      "correct": 8,
+      "total": 25,
+      "passed": false,
+      "completedAt": "2026-10-28T12:25:55.441Z",
+      "certificateCode": null
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSpring — Student Skill Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+  <section id="authView" class="auth-layout">
+    <div class="auth-art">
+      <div class="brand brand-light"><span class="brand-mark">✳</span> SkillSpring</div>
+      <div class="art-copy">
+        <div class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div>
+        <h1>Build skills.<br><em>Show your growth.</em></h1>
+        <p>A calmer, clearer way to track your learning journey — one task, one assessment, one milestone at a time.</p>
+        <div class="orbit-wrap"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">✳</div><span class="orbit-tag tag-one">01 / LEARN</span><span class="orbit-tag tag-two">02 / PRACTICE</span><span class="orbit-tag tag-three">03 / ACHIEVE</span></div>
+      </div>
+      <div class="auth-foot">A little progress each day adds up.</div>
+    </div>
+    <div class="auth-panel">
+      <div class="mobile-brand brand"><span class="brand-mark">✳</span> SkillSpring</div>
+      <div class="auth-box">
+        <div class="auth-tabs"><button class="auth-tab active" data-mode="login">Sign in</button><button class="auth-tab" data-mode="register">Create account</button></div>
+        <div id="authHeading"><h2>Welcome back</h2><p class="muted">Pick up where your learning left off.</p></div>
+        <form id="authForm">
+          <div id="nameField" class="field hidden"><label for="name">Full name</label><input id="name" name="name" placeholder="e.g. Alex Morgan" autocomplete="name"></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email"></div>
+          <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" placeholder="At least 6 characters" required minlength="6" autocomplete="current-password"></div>
+          <div id="authError" class="form-error"></div>
+          <button class="btn btn-primary btn-wide" id="authSubmit">Sign in <span>→</span></button>
+        </form>
+        <div class="auth-note"><span>✦</span> Your progress, tasks and certificates — all in one place.</div>
+      </div>
+      <div class="auth-bottom">Made for curious minds <span>✳</span></div>
+    </div>
+  </section>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar">
+      <a href="#" class="brand"><span class="brand-mark">✳</span> SkillSpring</a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-page="overview"><span>◫</span> Overview</button>
+        <button class="nav-item" data-page="subjects"><span>▦</span> Skill library <b id="subjectCount">10</b></button>
+        <button class="nav-item" data-page="tasks"><span>☷</span> My tasks</button>
+        <button class="nav-item" data-page="certificates"><span>✧</span> Certificates</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-card"><div class="sparkle">✦</div><strong>Small steps, big skills.</strong><p>Finish a task today. Be proud of it tomorrow.</p></div>
+        <button id="logoutBtn" class="logout-btn"><span>↪</span> Sign out</button>
+        <div class="profile-mini"><div class="avatar" id="sideAvatar">S</div><div><strong id="sideName">Student</strong><small>Student account</small></div><span class="more">•••</span></div>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="crumb">Workspace <span>/</span> <strong id="pageCrumb">Overview</strong></div><div class="top-actions"><span class="date-pill" id="todayDate"></span><div class="avatar avatar-top" id="topAvatar">S</div></div></header>
+      <div class="page-wrap">
+        <section id="overviewPage" class="page">
+          <div class="welcome-row"><div><div class="eyebrow dark-eyebrow">YOUR LEARNING SPACE</div><h1 id="welcomeTitle">Good to see you ✨</h1><p class="muted">Keep showing up. Your future self will thank you.</p></div><button class="btn btn-primary" data-goto="subjects">Explore skills <span>↗</span></button></div>
+          <div class="hero-banner"><div class="hero-content"><div class="hero-kicker"><span class="live-dot"></span> YOUR PERSONAL PROGRESS</div><h2>Every expert was once<br> a <em>beginner.</em></h2><p>Turn what you learn into proof of what you can do.</p><button class="btn btn-white" data-goto="tasks">Plan my next step <span>→</span></button></div><div class="hero-graphic"><div class="hero-ring ring-a"></div><div class="hero-ring ring-b"></div><div class="hero-star">✳</div><div class="floating-note note-a">✦ Keep going!</div><div class="floating-note note-b">+1 skill unlocked</div></div></div>
+          <div class="section-heading"><div><h2>Your progress at a glance</h2><p class="muted">A little progress is still progress.</p></div><button class="text-link" data-goto="subjects">View skill library ↗</button></div>
+          <div class="stats-grid">
+            <div class="stat-card"><div class="stat-icon lilac">▦</div><div class="stat-label">Tasks completed</div><div class="stat-value" id="statTasks">0 <small>/ 0</small></div><div class="progress-line"><span id="taskProgress"></span></div><div class="stat-foot">Keep that momentum going</div></div>
+            <div class="stat-card"><div class="stat-icon mint">◎</div><div class="stat-label">Assessments passed</div><div class="stat-value" id="statPassed">0</div><div class="stat-foot">60% or more to pass</div></div>
+            <div class="stat-card"><div class="stat-icon peach">✧</div><div class="stat-label">Certificates earned</div><div class="stat-value" id="statCerts">0</div><div class="stat-foot">Your hard work, recognised</div></div>
+            <div class="stat-card"><div class="stat-icon blue">↗</div><div class="stat-label">Average score</div><div class="stat-value" id="statAverage">0<small>%</small></div><div class="stat-foot">Across all your assessments</div></div>
+          </div>
+          <div class="dashboard-grid"><div class="panel"><div class="panel-heading"><div><h3>Continue learning</h3><p class="muted">Choose a skill and put your knowledge to the test.</p></div><button class="icon-button" data-goto="subjects">↗</button></div><div id="featuredSubjects" class="featured-subjects"></div></div><div class="panel"><div class="panel-heading"><div><h3>Task checklist</h3><p class="muted">Your next small wins.</p></div><button class="text-link" data-goto="tasks">All tasks</button></div><div id="miniTasks" class="mini-tasks"></div></div></div>
+          <div class="panel recent-panel"><div class="panel-heading"><div><h3>Recent assessment results</h3><p class="muted">Every attempt is a chance to grow.</p></div><button class="text-link" data-goto="certificates">View certificates ↗</button></div><div id="recentResults"></div></div>
+        </section>
+        <section id="subjectsPage" class="page hidden">
+          <div class="page-title-row"><div><div class="eyebrow dark-eyebrow">PICK YOUR NEXT CHALLENGE</div><h1>Skill library<span class="title-period">.</span></h1><p class="muted">10 subjects. 25 questions each. One more reason to feel capable.</p></div><div class="library-badge">✳ <span>LEARN AT YOUR PACE</span></div></div>
+          <div class="filter-row"><div class="search-box"><span>⌕</span><input id="subjectSearch" placeholder="Search skills..." type="search"></div><div id="categoryFilters" class="category-filters"><button class="filter-chip active" data-filter="All">All skills</button><button class="filter-chip" data-filter="Programming">Programming</button><button class="filter-chip" data-filter="Web Development">Web development</button><button class="filter-chip" data-filter="Data">Data</button><button class="filter-chip" data-filter="Computer Science">Computer science</button><button class="filter-chip" data-filter="Developer Tools">Tools</button></div></div>
+          <div id="subjectGrid" class="subject-grid"></div>
+        </section>
+        <section id="tasksPage" class="page hidden">
+          <div class="page-title-row"><div><div class="eyebrow dark-eyebrow">YOUR PERSONAL ACTION PLAN</div><h1>My tasks<span class="title-period">.</span></h1><p class="muted">Break big goals into small, doable steps.</p></div><button id="openTaskModal" class="btn btn-primary">＋ Add a task</button></div>
+          <div class="task-summary"><div><span class="task-summary-number" id="taskDoneCount">0</span><span> completed</span></div><div class="task-summary-track"><span id="taskSummaryProgress"></span></div><div><span id="taskRemaining">0</span> left to go</div></div>
+          <div class="task-tabs"><button class="task-tab active" data-task-filter="all">All tasks <span id="allTaskCount">0</span></button><button class="task-tab" data-task-filter="active">In progress</button><button class="task-tab" data-task-filter="completed">Completed</button></div>
+          <div id="taskList" class="task-list"></div>
+        </section>
+        <section id="certificatesPage" class="page hidden">
+          <div class="page-title-row"><div><div class="eyebrow dark-eyebrow">PROOF OF YOUR PROGRESS</div><h1>My certificates<span class="title-period">.</span></h1><p class="muted">Celebrate every skill you've worked hard to master.</p></div><div class="cert-trophy">✧</div></div>
+          <div class="cert-intro"><div class="cert-intro-icon">✳</div><div><h3>You've got this.</h3><p>Score at least 60% in a subject assessment to earn a certificate you can print or save as PDF.</p></div><button class="btn btn-dark" data-goto="subjects">Take an assessment ↗</button></div>
+          <div id="certificateGrid" class="certificate-grid"></div>
+        </section>
+      </div>
+      <footer class="app-footer"><span>✳ SkillSpring</span><span>Made for progress, not perfection.</span><span>LEARN · PRACTICE · GROW</span></footer>
+    </main>
+  </div>
+
+  <div id="taskModal" class="modal-backdrop hidden"><div class="modal"><button class="modal-close" id="closeTaskModal">×</button><div class="eyebrow dark-eyebrow">MAKE IT HAPPEN</div><h2>Add a task</h2><p class="muted">Give yourself one clear next step.</p><form id="taskForm"><div class="field"><label for="taskTitle">Task title</label><input id="taskTitle" required minlength="3" placeholder="e.g. Practise Java loops"></div><div class="field"><label for="taskSubject">Related subject</label><select id="taskSubject" required></select></div><div class="field"><label for="taskDue">Due date <span class="optional">(optional)</span></label><input id="taskDue" type="date"></div><div id="taskError" class="form-error"></div><button class="btn btn-primary btn-wide">Add to my tasks <span>→</span></button></form></div></div>
+  <div id="assessmentModal" class="modal-backdrop hidden"><div class="modal assessment-modal"><button class="modal-close" id="closeAssessment">×</button><div id="assessmentContent"></div></div></div>
+  <div id="certificateModal" class="modal-backdrop hidden"><div class="modal certificate-modal"><button class="modal-close" id="closeCertificate">×</button><div id="certificateContent"></div></div></div>
+  <script src="/app.js"></script>
+</body></html>
